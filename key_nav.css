@@ -1,0 +1,17 @@
+.key_nav.nav {
+  position: absolute;
+  display: block;
+  width: auto;
+  height: 18px;
+  padding: 0 2px;
+  background-color: yellow;
+  border: 2px solid red;*
+  text-align: center;
+  z-index: 2147483647;
+  line-height: 18px;
+  font-size: 14px;
+}
+
+.key_nav .consumed {
+  color: #ccc;
+}
