@@ -1,7 +1,8 @@
 var keyNavs = []
+var targetSelector = 'a[href]:visible, button:visible'
 
 function showKeyNavs() {
-  var targets = $('a[href]:visible');
+  var targets = $(targetSelector);
   resetNavSeq(targets.length)
 
   var fragment = $(document.createDocumentFragment())
@@ -52,7 +53,7 @@ function consumeKeyNav(keyCode) {
 
   if (matchedTarget) {
     hideKeyNavs()
-    location.href = matchedTarget.attr('href')
+    _doAction(matchedTarget)
     return
   }
 
@@ -75,4 +76,16 @@ function _createKeyNavHtml(seq) {
     '<span class="key_nav consumed"></span>' +
     '<span class="key_nav supplying">' + seq + '</span>' +
     '</span>'
+}
+
+function _doAction(targetNode) {
+  if (targetNode[0].tagName.toLowerCase() == 'a') {
+      var href = targetNode.attr('href')
+      if (href) {
+          location.href = href
+          return
+      }
+  }
+
+  targetNode.click()
 }
