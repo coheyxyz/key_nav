@@ -65,8 +65,8 @@ function _createKeyNav(target, parent) {
   var elem = $(_createKeyNavHtml(seq))
   var offset = $(target).offset()
   elem.css({
-    'left': (offset.left - 16) + 'px',
-    'top': (offset.top - 18) + 'px',
+    'left': (offset.left - 14) + 'px',
+    'top': offset.top + 'px',
   })
   return elem
 }
