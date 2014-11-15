@@ -21,6 +21,10 @@ function hideKeyNavs() {
   keyNavs = []
 }
 
+function isShown() {
+  return keyNavs.length > 0
+}
+
 function consumable(keyCode) {
   var ch = String.fromCharCode(keyCode).toLowerCase()
   return isNavChar(ch)
