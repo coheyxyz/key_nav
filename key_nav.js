@@ -1,5 +1,5 @@
 var keyNavs = []
-var targetSelector = 'a[href]:visible, button:visible'
+var targetSelector = 'a[href]:visible, button:visible, input:visible'
 
 function showKeyNavs() {
   var targets = $(targetSelector);
@@ -87,5 +87,6 @@ function _doAction(targetNode) {
       }
   }
 
+  targetNode.focus()
   targetNode.click()
 }

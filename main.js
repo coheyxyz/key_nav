@@ -17,9 +17,12 @@ function onKeyDown(event) {
   default:
     if (consumable(keyCode)) {
       consumeKeyNav(keyCode)
+    } else {
+      return
     }
-    break
   }
+
+  event.preventDefault()
 }
 
 $(document).keydown(onKeyDown)
