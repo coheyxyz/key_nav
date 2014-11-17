@@ -15,7 +15,7 @@ function onKeyDown(event) {
     hideKeyNavs()
     break
   default:
-    if (isShown() && consumable(keyCode)) {
+    if (isShown() && consumable(event)) {
       consumeKeyNav(keyCode)
     } else {
       return

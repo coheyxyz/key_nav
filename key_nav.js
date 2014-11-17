@@ -25,8 +25,12 @@ function isShown() {
   return keyNavs.length > 0
 }
 
-function consumable(keyCode) {
-  var ch = String.fromCharCode(keyCode).toLowerCase()
+function consumable(event) {
+  if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) {
+    return false;
+  }
+
+  var ch = String.fromCharCode(event.keyCode).toLowerCase()
   return isNavChar(ch)
 }
 
