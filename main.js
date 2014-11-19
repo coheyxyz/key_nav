@@ -1,8 +1,9 @@
 var triggerKeyCode = 188  // ,
 var escKeyCode = 27  // esc
+var ignoreTags = ['input', 'textarea']
 
 function onKeyDown(event) {
-  if (event.target.tagName.toLowerCase() != "body") {
+  if (ignoreTags.indexOf(event.target.tagName.toLowerCase()) >= 0) {
     return
   }
 
