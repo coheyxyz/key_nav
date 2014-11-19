@@ -7,6 +7,10 @@ function onKeyDown(event) {
     return
   }
 
+  if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) {
+    return
+  }
+
   var keyCode = event.keyCode
   switch (keyCode) {
   case triggerKeyCode:

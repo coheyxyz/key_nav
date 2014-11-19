@@ -26,10 +26,6 @@ function isShown() {
 }
 
 function consumable(event) {
-  if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) {
-    return false;
-  }
-
   var ch = String.fromCharCode(event.keyCode).toLowerCase()
   return isNavChar(ch)
 }
